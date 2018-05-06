@@ -13,20 +13,5 @@ resource "pagerduty_escalation_policy" "policy" {
       type = "schedule"
       id   = "${pagerduty_schedule.nightshift.id}"
     }
-
-    target {
-      type = "schedule"
-      id = "${pagerduty_schedule.dayshift.id}"
-    }
   }
-}
-
-resource "pagerduty_team" "nightteam" {
-  name        = "${var.service}-night"
-  description = "${var.service} Night Team"
-}
-
-resource "pagerduty_team" "dayteam" {
-  name        = "${var.service}-day"
-  description = "${var.service} Day Team"
 }
