@@ -19,7 +19,7 @@ variable "dayshift_users" {
     type = "list"
 }
 
-variable "nighthift_users" {
+variable "nightshift_users" {
     type = "list"
 }
 
