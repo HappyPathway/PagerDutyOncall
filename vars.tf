@@ -46,3 +46,5 @@ variable "dayshift_timezone" {
 variable "nightshift_timezone" {
     default = "America/New_York"
 }
+
+variable "pagerduty_token" {}
