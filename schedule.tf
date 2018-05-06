@@ -17,7 +17,7 @@ resource "pagerduty_schedule" "schedule" {
     start                        = "2015-11-06T20:00:00-05:00"
     rotation_virtual_start       = "2015-11-06T20:00:00-05:00"
     rotation_turn_length_seconds = 86400
-    users                        = "${list(data.pagerduty_user.dayshift_users.*.id)}"
+    users                        = ["${data.pagerduty_user.dayshift_users.*.id}"]
 
     restriction {
       type              = "daily_restriction"
@@ -31,7 +31,7 @@ resource "pagerduty_schedule" "schedule" {
     start                        = "2015-11-06T20:00:00-05:00"
     rotation_virtual_start       = "2015-11-06T20:00:00-05:00"
     rotation_turn_length_seconds = 86400
-    users                        = "${list(data.pagerduty_user.nightshift_users.*.id)}"
+    users                        = ["${data.pagerduty_user.nightshift_users.*.id}"]
 
     restriction {
       type              = "daily_restriction"
