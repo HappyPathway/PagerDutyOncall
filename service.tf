@@ -1,7 +1,7 @@
 resource "pagerduty_service" "service" {
   name                    = "${var.service}"
   description             = "${var.service}"
-  auto_resolve_timeout    = "${Var.auto_resolve_timeout}"
+  auto_resolve_timeout    = "${var.auto_resolve_timeout}"
   acknowledgement_timeout = "${var.acknowledgement_timeout}"
   escalation_policy       = "${pagerduty_escalation_policy.policy.id}"
 
