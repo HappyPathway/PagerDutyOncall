@@ -69,3 +69,7 @@ variable "auto_resolve_timeout" {
 variable "acknowledgement_timeout" {
     default = 3600
 }
+
+variable "timezone" {
+   default = "America/New_York"
+}

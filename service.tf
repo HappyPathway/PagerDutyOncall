@@ -21,7 +21,7 @@ resource "pagerduty_service" "service" {
 
   support_hours {
     type         = "fixed_time_per_day"
-    time_zone    = "America/Lima"
+    time_zone    = "${var.timezone}"
     start_time   = "${var.support_hours_start}"
     end_time     = "${var.support_hours_end}"
     days_of_week = "${var.support_days}"
