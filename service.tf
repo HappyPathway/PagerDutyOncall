@@ -1,8 +1,8 @@
 resource "pagerduty_service" "service" {
   name                    = "${var.service}"
   description             = "${var.service}"
-  auto_resolve_timeout    = 3600
-  acknowledgement_timeout = 3600
+  auto_resolve_timeout    = "${Var.auto_resolve_timeout}"
+  acknowledgement_timeout = "${var.acknowledgement_timeout}"
   escalation_policy       = "${pagerduty_escalation_policy.policy.id}"
 
   incident_urgency_rule {
@@ -22,9 +22,9 @@ resource "pagerduty_service" "service" {
   support_hours {
     type         = "fixed_time_per_day"
     time_zone    = "America/Lima"
-    start_time   = "09:00:00"
-    end_time     = "17:00:00"
-    days_of_week = [1, 2, 3, 4, 5]
+    start_time   = "${var.support_hours_start}"
+    end_time     = "${var.support_hours_end}"
+    days_of_week = "${var.support_days}"
   }
 
   scheduled_actions {

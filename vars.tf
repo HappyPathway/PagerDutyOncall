@@ -48,3 +48,24 @@ variable "nightshift_timezone" {
 }
 
 variable "pagerduty_token" {}
+
+variable "support_hours_start" {
+    default = "09:00:00"
+}
+
+variable "support_hours_end" {
+    default = "17:00:00"
+}
+
+variable "support_days" {
+    type = "list"
+    default = [1, 2, 3, 4, 5]
+}
+
+variable "auto_resolve_timeout" {
+    default = 3600
+}
+
+variable "acknowledgement_timeout" {
+    default = 3600
+}
