@@ -27,7 +27,7 @@ resource "pagerduty_schedule" "schedule" {
   }
 
   layer {
-    name                         = "Day Shift"
+    name                         = "Night Shift"
     start                        = "2015-11-06T20:00:00-05:00"
     rotation_virtual_start       = "2015-11-06T20:00:00-05:00"
     rotation_turn_length_seconds = 86400
