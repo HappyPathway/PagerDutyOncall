@@ -8,7 +8,7 @@ resource "pagerduty_schedule" "dayshift" {
     start                        = "2015-11-06T20:00:00-05:00"
     rotation_virtual_start       = "2015-11-06T20:00:00-05:00"
     rotation_turn_length_seconds = "${var.nightshift_rotation_length*60*60}"
-    users                        = "${list(var.dayshift_users)}"
+    users                        = ["${var.dayshift_users}"]
 
     restriction {
       type              = "daily_restriction"
